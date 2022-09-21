@@ -71,7 +71,7 @@ export default function Add() {
         //setPercentage(null)
         //setimgIsSelected(false)
         //setFormData((prev) => ({ ...prev, type: '-- Type --' }))
-        window.location.reload();
+        //window.location.reload();
     }
     console.log(percentage)
     return (
