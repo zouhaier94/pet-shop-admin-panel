@@ -1,6 +1,7 @@
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../Firebase"
 import { getStorage, ref, deleteObject } from "firebase/storage";
+import React from "react";
 
 
 export default function Card(props) {
@@ -10,16 +11,13 @@ export default function Card(props) {
         const storage = getStorage();
         const desertRef = ref(storage, props.imgName);
         await deleteObject(desertRef);
-        //window.location.reload(true);
+        window.location.reload();
     };
-
-
-
 
     return (
         <div className="card ">
             <span className="card--badge">{props.price}$</span>
-            <img onClick={() => deletePet(props.id)} className="card--delete hover:bg-red-600 " alt=""
+            <img onClick={() => deletePet(props.id)} className="card--delete hover:bg-red-600" alt=""
                 src={require("../images/del.png")} />
             <img className="card--img" src={props.img} alt="" />
             <div className="my-2 text-center">

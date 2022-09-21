@@ -67,9 +67,13 @@ export default function Add() {
             imgUrl: productImg,
             imgName: formData.imgName,
         });
+        event.target.reset()
+        setPercentage(null)
+        setimgIsSelected(false)
+        setFormData((prev) => ({ ...prev, type: '-- Type --' }))
         //window.location.reload(true);
     }
-
+    console.log(percentage)
     return (
         <div className="add--div1">
             <div className="add--div2">
@@ -114,7 +118,7 @@ export default function Add() {
                         </div>
 
                         <input
-                            disabled={percentage == null && percentage < 100}
+                            disabled={percentage == null || percentage < 100}
                             type="submit"
                             value="Add"
                             className="add--submit--button"

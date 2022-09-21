@@ -82,10 +82,10 @@
 
 /* Login */
 .login--div1 {
-@apply shadow-md p-5 mx-auto my-auto;
+@apply shadow-md p-5 mx-auto;
 }
 .login--div2 {
-@apply container mx-auto w-[400px] border border-gray-300 bg-white rounded-md;
+@apply container mx-auto my-14 w-[400px] border border-gray-300 bg-white rounded-md;
 }
 .login--div3 {
 @apply p-5 space-y-5 shadow-xl;
