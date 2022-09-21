@@ -67,7 +67,7 @@ export default function Add() {
             imgUrl: productImg,
             imgName: formData.imgName,
         });
-        event.target.reset()
+        //event.target.reset()
         //setPercentage(null)
         //setimgIsSelected(false)
         //setFormData((prev) => ({ ...prev, type: '-- Type --' }))
