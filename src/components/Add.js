@@ -67,7 +67,7 @@ export default function Add() {
             imgUrl: productImg,
             imgName: formData.imgName,
         });
-        window.location.reload(true);
+        //window.location.reload(true);
     }
 
     return (

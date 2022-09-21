@@ -10,7 +10,7 @@ export default function Card(props) {
         const storage = getStorage();
         const desertRef = ref(storage, props.imgName);
         await deleteObject(desertRef);
-        window.location.reload(true);
+        //window.location.reload(true);
     };
 
 
