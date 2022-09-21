@@ -68,8 +68,8 @@ export default function Add() {
             imgName: formData.imgName,
         });
         event.target.reset()
-        setPercentage(null)
-        setimgIsSelected(false)
+        //setPercentage(null)
+        //setimgIsSelected(false)
         //setFormData((prev) => ({ ...prev, type: '-- Type --' }))
         window.location.reload();
     }
