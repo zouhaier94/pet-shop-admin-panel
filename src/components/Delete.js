@@ -42,8 +42,7 @@ export default function Delete() {
         fetchData()
     }, []);
 
-    console.log(data)
-
+    //console.log(data)
 
     const cards = data.map(el => {
 

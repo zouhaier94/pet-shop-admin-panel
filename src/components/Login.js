@@ -18,16 +18,15 @@ export default function Login() {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log(formData)
-
+        //console.log(formData)
 
         signInWithEmailAndPassword(auth, formData.email, formData.password)
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
                 dispatch({ type: "LOGIN", payload: user })
-                console.log(user)
-                console.log("logged In")
+                //console.log(user)
+                //console.log("logged In")
                 navigate("/home")
             })
             .catch((error) => {

@@ -36,13 +36,13 @@ export default function Add() {
         uploadTask.on('state_changed',
             (snapshot) => {
                 const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                console.log('Upload is ' + progress + '% done');
                 setPercentage(progress)
                 switch (snapshot.state) {
                     case 'paused': console.log('Upload is paused'); break;
                     case 'running': console.log('Upload is running'); break;
                     default: break;
                 }
+                console.log('Upload is ' + progress + '% done');
             },
             (error) => {
                 console.log(error)
@@ -52,7 +52,7 @@ export default function Add() {
                     setProductImg(downloadURL)
                     setFormData((prev) => ({ ...prev, imgURL: downloadURL, imgName: productImg.name }))
                 });
-                console.log(productImg)
+                //console.log(productImg)
             }
         );
     }
@@ -76,7 +76,7 @@ export default function Add() {
             window.location.reload(1);
         }, 2000);
     }
-    console.log(percentage)
+    //console.log(percentage)
     return (
         <div className="add--div1">
             <div className="add--div2">

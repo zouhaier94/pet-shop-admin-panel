@@ -16,7 +16,8 @@ export default function App(props) {
     return currentUser ? children : <Navigate to="/" />;
   };
 
-  console.log(currentUser)
+  //console.log(currentUser)
+
   return (
     <div >
       <BrowserRouter>
