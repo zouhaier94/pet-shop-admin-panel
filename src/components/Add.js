@@ -72,6 +72,9 @@ export default function Add() {
         //setimgIsSelected(false)
         //setFormData((prev) => ({ ...prev, type: '-- Type --' }))
         //window.location.reload();
+        setTimeout(function () {
+            window.location.reload(1);
+        }, 2000);
     }
     console.log(percentage)
     return (
