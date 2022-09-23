@@ -43,10 +43,10 @@
 @apply rounded-2xl overflow-hidden  shadow-md bg-white  hover:shadow-xl  m-5 w-[200px] h-[200px];
 }
 .card--badge {
-@apply bg-white absolute border-gray-300 border-[1px]  mt-2 ml-2 px-2 rounded-md;
+@apply bg-white border-gray-200 text-sm border-[1px] ml-2 mb-4 px-1 rounded-md;
 }
 .card--delete {
-@apply bg-white h-7 cursor-pointer absolute border-gray-300 border-[1px] mt-2 ml-[160px] p-1 rounded-md;
+@apply bg-white h-6 cursor-pointer border-gray-300 border-[1px] ml-1 mb-2 p-1 rounded-md;
 }
 .card--img {
 @apply w-full h-[165];

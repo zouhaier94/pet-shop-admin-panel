@@ -7,21 +7,27 @@ import React from "react";
 export default function Card(props) {
 
     const deletePet = async (id) => {
-        await deleteDoc(doc(db, 'pets', id));
-        const storage = getStorage();
-        const desertRef = ref(storage, props.imgName);
-        await deleteObject(desertRef);
-        window.location.reload();
+
+        if (window.confirm('Are you sure you want to delete pet?')) {
+            // Delete it!
+            await deleteDoc(doc(db, 'pets', id));
+            const storage = getStorage();
+            const desertRef = ref(storage, props.imgName);
+            await deleteObject(desertRef);
+            window.location.reload();
+        }
     };
 
     return (
         <div className="card ">
-            <span className="card--badge">{props.price}$</span>
-            <img onClick={() => deletePet(props.id)} className="card--delete hover:bg-red-600" alt=""
-                src={require("../images/del.png")} />
+
             <img className="card--img" src={props.img} alt="" />
-            <div className="my-2 text-center">
+
+            <div className="my-2 text-center flex justify-center ">
                 <div className="font-bold ">{props.name}</div>
+                <div className="card--badge">{props.price}$</div>
+                <img onClick={() => deletePet(props.id)} className="card--delete hover:bg-red-600" alt=""
+                    src={require("../images/del.png")} />
             </div>
         </div>
     )
