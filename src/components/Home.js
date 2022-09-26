@@ -1,9 +1,17 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext"
+
 
 export default function Home() {
 
-    const handleLogout = () => { localStorage.clear() }
+    const { dispatch } = React.useContext(AuthContext)
+
+    const handleLogout = () => {
+        //localStorage.clear() 
+        dispatch({ type: "LOGOUT" })
+    }
+
 
     return (
         <>
