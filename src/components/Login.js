@@ -2,14 +2,14 @@ import React from 'react'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../Firebase';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from "../context/AuthContext"
+import { LoginContext } from "../context/LoginContext"
 
 export default function Login() {
 
     const [formData, setFormData] = React.useState({ email: "", password: "" })
     const navigate = useNavigate()
+    const { setCurrentUser } = React.useContext(LoginContext)
 
-    const { dispatch } = React.useContext(AuthContext)
 
     function handleChange(event) {
         const { name, value } = event.target
@@ -23,8 +23,8 @@ export default function Login() {
         signInWithEmailAndPassword(auth, formData.email, formData.password)
             .then((userCredential) => {
                 // Signed in 
-                const user = userCredential.user;
-                dispatch({ type: "LOGIN", payload: user })
+                setCurrentUser(true)
+                //dispatch({ type: "LOGIN", payload: user })
                 //console.log(user)
                 //console.log("logged In")
                 navigate("/home")
